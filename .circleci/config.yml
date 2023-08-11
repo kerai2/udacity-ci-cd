@@ -27,10 +27,6 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - run:
-          name: "retrieve_hello_world_output"
-          command: echo "Hi there world" > output.txt
-
       - attach_workspace:
           at: ~/workspace
       - run: cat ~/output.txt
