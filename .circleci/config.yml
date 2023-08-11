@@ -31,8 +31,7 @@ jobs:
     - image: circleci/node:13.8.0
     steps:
       - run:
-          name: "print-world"
-          command: "echo World"
+          name: "print-var"
           command: echo $MY_ENV_VAR
 
 # Orchestrate jobs using workflows
