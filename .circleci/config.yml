@@ -33,6 +33,7 @@ jobs:
       - run:
           name: "print-world"
           command: "echo World"
+          command: echo $MY_ENV_VAR
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
