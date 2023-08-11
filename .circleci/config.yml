@@ -28,7 +28,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: ~/workspace
+          at: ~/
       - run: cat ~/output.txt
 
 # Orchestrate jobs using workflows
