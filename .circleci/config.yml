@@ -37,6 +37,6 @@ workflows:
   say-hello-workflow:
     jobs:
       - save_hello_world_output
-      - retrieve_hello_world_output :
+      - retrieve_hello_world_output:
           requires: 
             - save_hello_world_output
