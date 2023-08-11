@@ -16,11 +16,11 @@ jobs:
       - checkout
       - run:
           name: "save_hello_world_output"
-          command: echo "Hi there world" > output.txt
+          command: echo "Hi there world" > ~/output.txt
       - persist_to_workspace:
-          root: /tmp/workspace
+          root: ~/
           paths:
-           - file/output.txt
+           - output.txt
 
   retrieve_hello_world_output:
     docker:
@@ -32,7 +32,8 @@ jobs:
           command: echo "Hi there world" > output.txt
 
       - attach_workspace:
-          at: /tmp/workspace
+          at: ~/workspace
+      - run: cat ~/output.txt
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
@@ -41,4 +42,5 @@ workflows:
     jobs:
       - save_hello_world_output
       - retrieve_hello_world_output :
-          requires: [save_hello_world_output]
+          requires: 
+            - save_hello_world_output
