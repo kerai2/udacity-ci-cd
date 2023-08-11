@@ -32,7 +32,8 @@ jobs:
     steps:
       - run:
           name: "print-var"
-          command: echo $MY_ENV_VAR
+          command: |
+            echo $MY_ENV_VAR
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
